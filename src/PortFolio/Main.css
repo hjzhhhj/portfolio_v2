@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
 
 body {
-    background-color: black;
+    background: url("/public/background.png") no-repeat center center/contain;
+    background-size: cover;
+    height: 5000px;
     margin: 0;
 }
 
 header {
-    position: fixed; 
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -14,10 +16,11 @@ header {
     padding: 0px 120px;
     display: flex;
     align-items: center;
-    background-color: black;
     z-index: 1000;
-    white-space: nowrap; 
+    white-space: nowrap;
     overflow: hidden;
+    background-color: rgb(0, 0, 0);
+    
 }
 
 header nav {
@@ -26,21 +29,27 @@ header nav {
     width: 100%;
 }
 
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
 header p {
     font-family: "Lilita One";
     font-size: 28px;
     margin-right: 1%;
 }
 
-.nav-right { 
-    display: flex;
-    align-items: center;
+header a {
+    color: #6da4b0;
+    text-decoration: none;
 }
 
 header ul {
     display: flex;
     list-style: none;
     font-size: 18px;
+    font-weight: 600;
     padding: 0;
     margin: 0;
     align-items: center;
@@ -57,20 +66,6 @@ header ul li a {
     flex-shrink: 0;
 }
 
-header .apply {
-    margin-left: 30px;
-    padding: 8px 16px;
-    background-color: chocolate;
-    border-radius: 8px;
-}
-
-header .apply a {
-    color: white;
-    text-decoration: none;
-    font-family: "Pretendard";
-    font-weight: bold;
-}
-
 @media (max-width: 1024px) {
     header {
         padding: 15px 40px;
@@ -82,11 +77,6 @@ header .apply a {
 
     header ul {
         font-size: 16px;
-    }
-
-    header .apply {
-        padding: 6px 12px;
-        font-size: 14px;
     }
 }
 
@@ -102,9 +92,37 @@ header .apply a {
     header ul {
         font-size: 14px;
     }
+}
 
-    header .apply {
-        padding: 5px 10px;
-        font-size: 12px;
+.introduce {
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    flex-direction: column;
+    padding: 0px 120px;
+}
+
+.introduce p {
+    color: white;
+    font-family: "Pretendard";
+    font-size: 100px;
+    font-weight: 900;
+    word-break: break-word; /* 긴 단어가 줄 바꿈되게 설정 */
+    margin: 0px;
+}
+
+.introduce .Typing {
+    color: #6da4b0;
+}
+
+@media (max-width: 768px) {
+    .introduce p {
+        font-size: 50px; 
+    }
+}
+
+@media (max-width: 480px) {
+    .introduce p {
+        font-size: 35px; 
     }
 }
