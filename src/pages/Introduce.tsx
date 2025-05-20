@@ -21,7 +21,7 @@ function Introduce() {
                     transition={{ duration: 1.2, ease: "easeOut", delay: 0.8 }}
                 >
                     <p>
-                        <span className="Typing"><TypingEffect /> </span>
+                        <span className="Typing"><TypingEffect /></span>&nbsp;
                         <br className="mobile-break" />
                         <span> 개발자, 정희진입니다</span>
                     </p>

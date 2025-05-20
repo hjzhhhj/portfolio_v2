@@ -9,7 +9,7 @@ body {
 
 .introduce {
     display: flex;
-    margin-top: 280px;
+    margin-top: 260px;
     min-height: 100vh;
     flex-direction: column;
     padding: 0px 120px;
@@ -29,7 +29,7 @@ body {
 
 .introduce .Hi {
     font-size: 60px;
-    margin-bottom: 28px;
+    margin-bottom: 16px;
 }
 
 .introduce .motto {
@@ -52,7 +52,7 @@ body {
 }
 
 .All .more-button {
-    margin-top: 150px;
+    margin-top: 180px;
     padding: 12px 20px;
     border: none;
     font-size: 16px;
