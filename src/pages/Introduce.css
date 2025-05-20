@@ -41,7 +41,6 @@ body {
 
 .introduce span {
     color: rgb(100, 100, 199);
-    min-width: 380px;
     display: inline-block;
 }
 
