@@ -23,7 +23,7 @@ function Introduce() {
                     <p>
                         <span className="Typing"><TypingEffect /></span>&nbsp;
                         <br className="mobile-break" />
-                        <span> 개발자, 정희진입니다</span>
+                        <span>개발자, 정희진입니다</span>
                     </p>
                     <p className="motto">네가 세상에서 보고 싶은 변화가 되어라 – 마하트마 간디</p>
                 </motion.div>
