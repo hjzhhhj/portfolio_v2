@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+
+body {
+    background: #000000;
+    background-size: cover;
+    height: 6000px;
+    margin: 0;
+}
+
+.introduce {
+    display: flex;
+    margin-top: 280px;
+    min-height: 100vh;
+    flex-direction: column;
+    padding: 0px 120px;
+    position: relative;
+}
+
+.introduce p {
+    color: white;
+    font-family: "Pretendard";
+    font-size: 48px;
+    font-weight: 700;
+    word-break: break-word;
+    margin: 0px;
+    justify-content: center;
+    align-items: center;
+}
+
+.introduce .Hi {
+    font-size: 60px;
+    margin-bottom: 28px;
+}
+
+.introduce .motto {
+    color: rgb(170, 170, 170);
+    font-size: 20px;
+    margin-top: 28px;
+    font-weight: 400;
+}
+
+.introduce span {
+    color: rgb(100, 100, 199);
+    min-width: 380px;
+    display: inline-block;
+}
+
+.typing {
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid white;
+    display: inline-block;
+}
+
+.All .more-button {
+    margin-top: 150px;
+    padding: 12px 20px;
+    border: none;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+.more-button::after {
+    content: "";
+    display: block;
+    width: 2px;
+    height: 30px;
+    background-color: white;
+    margin: 10px auto 0;
+    animation: slideLine 2s infinite;
+    opacity: 0;
+}
+
+@keyframes slideLine {
+    0% {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+    70% {
+        transform: translateY(10px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 1024px) {
+    .introduce {
+        padding: 0 60px;
+    }
+
+    .introduce p {
+        font-size: 36px;
+    }
+
+    .introduce .Hi {
+        font-size: 48px;
+    }
+
+    .introduce .motto {
+        font-size: 18px;
+    }
+
+    .introduce .Typing {
+        min-width: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .introduce {
+        padding: 0 30px;
+    }
+
+    .introduce p {
+        font-size: 28px;
+    }
+
+    .introduce .Hi {
+        font-size: 36px;
+    }
+
+    .introduce .motto {
+        font-size: 16px;
+    }
+
+    .introduce .Typing {
+        min-width: 200px;
+    }
+}
+
+.mobile-break {
+    display: none;
+  }
+  
+  @media (max-width: 600px) {
+    .mobile-break {
+      display: inline;
+    }
+  }
+  
