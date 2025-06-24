@@ -1,3 +1,4 @@
+// Skills.tsx
 import { motion } from "framer-motion";
 import { Monitor, Server, Palette } from "lucide-react";
 import styled from 'styled-components';
@@ -8,10 +9,10 @@ const SkillsSection = styled.section`
 `;
 
 const MaxWidthContainer = styled.div`
-  max-width: 960px;
+  max-width: 1200px; /* <-- 이 값을 960px에서 1200px로 변경했습니다. */
   margin-left: auto;
   margin-right: auto;
-  padding: 0 1.5rem;
+  padding: 0 4vw; /* <-- 이 값을 0 1.5rem에서 0 4vw로 변경했습니다. */
 `;
 
 const TitleContainer = styled(motion.div)`
@@ -43,10 +44,14 @@ const SkillsGrid = styled.div`
 
   @media (min-width: 768px) {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 4rem; /* 이 값은 이미 4rem으로 설정되어 있습니다. */
   }
 `;
 
 const SkillCategoryCard = styled(motion.div)`
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
   background-color: rgba(18, 18, 18, 0.5);
   backdrop-filter: blur(8px);
   border-radius: 1.5rem;
@@ -86,43 +91,78 @@ const CategoryTitle = styled.h3`
 const SkillList = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 1.5rem; /* 이 값은 개별 스킬 항목 간의 세로 간격입니다. */
 `;
 
 const SkillItem = styled(motion.div)`
   background-color: rgba(30, 30, 30, 0.5);
   border-radius: 0.75rem;
   padding: 1rem;
-  text-align: center;
+  text-align: left;
   color: #e2e8f0;
   font-weight: 500;
   border: 1px solid #4a4a4a;
   transition: all 0.3s ease-in-out;
-
+  display: flex;
+  flex-direction: column;
+  
   &:hover {
     border-color: rgba(96, 165, 250, 0.3);
   }
 `;
 
+const SkillName = styled.span`
+  margin-bottom: 0.5rem;
+`;
+
+const SkillLevelBar = styled.div`
+  width: 100%;
+  height: 0.5rem;
+  background-color: rgba(96, 165, 250, 0.2);
+  border-radius: 0.25rem;
+  overflow: hidden;
+`;
+
+const SkillLevelFill = styled(motion.div)<{ $level: number }>`
+  height: 100%;
+  background-color: #60a5fa;
+  border-radius: 0.25rem;
+  width: ${props => props.$level}%;
+`;
+
 const Skills = () => {
   const skills = {
     frontend: {
-      title: '프론트엔드',
+      title: 'Frontend',
       icon: Monitor,
-      skills: ['React', 'Vue.js', 'JavaScript', 'TypeScript', 'HTML/CSS', 'Styled Components'],
-      gradient: 'linear-gradient(to right, #3b82f6, #06b6d4)'
+      skills: [
+        { name: 'React', level: 90 },
+        { name: 'React Native', level: 75 },
+        { name: 'JavaScript', level: 85 },
+        { name: 'TypeScript', level: 70 },
+        { name: 'HTML/CSS', level: 95 },
+        { name: 'Styled Components', level: 80 }
+      ],
     },
     backend: {
-      title: '백엔드',
+      title: 'Backend',
       icon: Server,
-      skills: ['Node.js', 'Python', 'Java', 'Express', 'Django', 'Spring Boot'],
-      gradient: 'linear-gradient(to right, #22c55e, #10b981)'
+      skills: [
+        { name: 'Python', level: 80 },
+        { name: 'Java', level: 70 },
+        { name: 'Kotlin', level: 60 },
+        { name: 'C', level: 50 },
+        { name: 'MySQL', level: 75 }
+      ],
     },
     design: {
-      title: '디자인',
+      title: 'Design',
       icon: Palette,
-      skills: ['Figma', 'Adobe XD', 'Photoshop', 'Illustrator', 'UI/UX Design'],
-      gradient: 'linear-gradient(to right, #a855f7, #ec4899)'
+      skills: [
+        { name: 'Figma', level: 85 },
+        { name: 'Photoshop', level: 70 },
+        { name: 'Illustrator', level: 65 }
+      ],
     }
   };
 
@@ -160,13 +200,21 @@ const Skills = () => {
               <SkillList>
                 {category.skills.map((skill, skillIndex) => (
                   <SkillItem
-                    key={skill}
+                    key={skill.name}
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: skillIndex * 0.1 }}
                     viewport={{ once: true }}
                   >
-                    {skill}
+                    <SkillName>{skill.name}</SkillName>
+                    <SkillLevelBar>
+                      <SkillLevelFill $level={skill.level} 
+                        initial={{ width: 0 }}
+                        whileInView={{ width: `${skill.level}%` }}
+                        transition={{ duration: 1.5, delay: skillIndex * 0.1 + 0.5 }}
+                        viewport={{ once: true }}
+                      />
+                    </SkillLevelBar>
                   </SkillItem>
                 ))}
               </SkillList>
