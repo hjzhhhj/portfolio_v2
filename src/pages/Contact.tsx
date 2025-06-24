@@ -124,10 +124,10 @@ const ContactButton = styled(motion.button)`
 
 const Contact = () => {
   const contacts = [
-    { icon: Github, label: 'GitHub', value: 'github.com/username', gradient: 'linear-gradient(to right, #4b5563, #1f2937)' },
-    { icon: Linkedin, label: 'LinkedIn', value: 'linkedin.com/in/username', gradient: 'linear-gradient(to right, #2563eb, #1e40af)' },
-    { icon: Mail, label: 'Email', value: 'your.email@gmail.com', gradient: 'linear-gradient(to right, #dc2626, #db2777)' },
-    { icon: Phone, label: 'Phone', value: '010-1234-5678', gradient: 'linear-gradient(to right, #16a34a, #059669)' }
+    { icon: Github, label: 'GitHub', value: 'github.com/hjzhhhj', gradient: 'linear-gradient(to right, #4b5563, #1f2937)' },
+    { icon: Linkedin, label: 'LinkedIn', value: 'linkedin.com/in/hjzhhhj', gradient: 'linear-gradient(to right, #2563eb, #1e40af)' },
+    { icon: Mail, label: 'Email', value: 'jhj090120@gmail.com', gradient: 'linear-gradient(to right, #dc2626, #db2777)' },
+    { icon: Phone, label: 'Phone', value: '010-6283-7513', gradient: 'linear-gradient(to right, #16a34a, #059669)' }
   ];
 
   return (
@@ -143,7 +143,6 @@ const Contact = () => {
             Contact
           </SectionTitle>
           <UnderlineDiv></UnderlineDiv>
-          <ContactDescription>언제든지 연락주세요!</ContactDescription>
         </TitleContainer>
 
         <ContactGrid>

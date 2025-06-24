@@ -101,11 +101,11 @@ const TimelineItem = styled(motion.div)`
     .activity-image {
       margin-left: 0;
       margin-right: 4rem;
-      transform-origin: right center; /* 오른쪽에서 시작 */
+      transform-origin: right center;
     }
 
     @media (max-width: 767px) {
-      flex-direction: row; /* 모바일에서는 다시 왼쪽으로 */
+      flex-direction: row; 
       .activity-content {
         margin-left: 4rem;
         margin-right: 0;
@@ -222,34 +222,98 @@ const Activities = () => {
   const activities = [
     {
       id: 1,
-      title: '첫 번째 활동',
-      period: '2024.01 - 2024.03',
-      description: '이 활동은 저의 첫 번째 중요한 경험입니다. 여기서는 기본적인 기술을 익히고 팀워크의 중요성을 배웠습니다.',
-      image: 'https://via.placeholder.com/250x141/0000FF/FFFFFF?text=Activity+1', // 16:9 비율 이미지 URL
+      title: 'Microsoft Empowerment Project 교육 이수',
+      period: '2024.04 ~ 2024.08',
+      description: '-',
+      image: '/Assets/ac1.png', 
       icon: Lightbulb
     },
     {
       id: 2,
-      title: '두 번째 활동',
-      period: '2024.04 - 2024.06',
-      description: '이 활동을 통해 실제 프로젝트에 참여하며 문제를 해결하는 능력을 키웠습니다. 어려운 도전이었지만 많은 것을 배웠습니다.',
-      image: 'https://via.placeholder.com/250x141/FF0000/FFFFFF?text=Activity+2',
+      title: 'Yeep 창업경진대회 본선 진출',
+      period: '2024.05 ~ 2024.09',
+      description: '-',
+      image: '/Assets/ac2.png',
       icon: Briefcase
     },
     {
       id: 3,
-      title: '세 번째 활동',
-      period: '2024.07 - 2024.09',
-      description: '협업 프로젝트에서 리더 역할을 맡아 팀을 이끌었습니다. 소통과 리더십 능력을 향상시키는 계기가 되었습니다.',
-      image: 'https://via.placeholder.com/250x141/00FF00/FFFFFF?text=Activity+3',
+      title: '교내 창의 아이디어 경진대회 참여',
+      period: '2024.06',
+      description: '-',
+      image: '/Assets/ac3.png',
       icon: Users
     },
     {
       id: 4,
-      title: '네 번째 활동',
-      period: '2024.10 - 2024.12',
-      description: '가장 최근의 활동으로, 심화된 기술을 적용하여 혁신적인 솔루션을 개발했습니다. 큰 성과를 달성했습니다.',
-      image: 'https://via.placeholder.com/250x141/FFFF00/000000?text=Activity+4',
+      title: '중앙대학교 Be Curious! AI 트랙 교육 이수',
+      period: '2024.07 - 2024.08',
+      description: '-',
+      image: '/Assets/ac4.png',
+      icon: Star
+    },
+    {
+      id: 5,
+      title: '미림 소프트웨어 챌린지',
+      period: '2024.08 - 2024.09',
+      description: '-',
+      image: '/Assets/ac5.png',
+      icon: Star
+    },
+    {
+      id: 6,
+      title: '청소년 디지털서비스 아이디어 공모전',
+      period: '2024.08 - 2024.09',
+      description: '-',
+      image: '/Assets/ac6.png',
+      icon: Star
+    },
+    {
+      id: 7,
+      title: '피우다 프로젝트',
+      period: '2024.09 - 2024.10',
+      description: '-',
+      image: '/Assets/ac7.png',
+      icon: Star
+    },
+    {
+      id: 8,
+      title: '미림 해커톤',
+      period: '2024.10',
+      description: '-',
+      image: '/Assets/ac8.png',
+      icon: Star
+    },
+    {
+      id: 9,
+      title: 'AI 신한은행 아이디어톤',
+      period: '2024.10 - 2024.11',
+      description: '-',
+      image: '/Assets/ac9.png',
+      icon: Star
+    },
+    {
+      id: 10,
+      title: '고교생 해커톤 Smarteen App+ Challenge 28회',
+      period: '2024.12',
+      description: '-',
+      image: '/Assets/ac10.png',
+      icon: Star
+    },
+    {
+      id: 11,
+      title: '고교생 해커톤 Smarteen App+ Challenge 29회',
+      period: '2025.02',
+      description: '-',
+      image: '/Assets/ac11.png',
+      icon: Star
+    },
+    {
+      id: 12,
+      title: '전공동아리 MAS 부장 위임',
+      period: '2025.03 ~',
+      description: '-',
+      image: '/Assets/ac12.png',
       icon: Star
     },
   ];

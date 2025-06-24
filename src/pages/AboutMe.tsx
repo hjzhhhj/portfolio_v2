@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import styled from 'styled-components';
-import User from "../Assets/Me.png";
+import User from "/Assets/Me.png";
 
 const AboutSection = styled.section`
   padding: 5rem 0;

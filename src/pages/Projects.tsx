@@ -66,7 +66,6 @@ const ProjectItem = styled(motion.div)<{ $isEven: boolean }>`
     padding: 2rem;
     gap: 2rem;
 
-    
     .project-image-container, .project-content {
       margin: 0 !important;
     }
@@ -74,12 +73,12 @@ const ProjectItem = styled(motion.div)<{ $isEven: boolean }>`
 `;
 
 const ImageContainer = styled.div`
-  flex-shrink: 0; /* 이미지가 줄어들지 않도록 */
-  width: 50%; /* 컨테이너 너비의 절반 */
-  aspect-ratio: 16 / 9; /* 16:9 비율 유지 */
-  background-color: #333; /* 이미지 없을 때 배경색 */
+  flex-shrink: 0; 
+  width: 50%; 
+  aspect-ratio: 16 / 9; 
+  background-color: #333; 
   border-radius: 1rem;
-  overflow: hidden; /* 이미지 넘치는 부분 숨김 */
+  overflow: hidden; 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -88,16 +87,16 @@ const ImageContainer = styled.div`
   img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* 이미지가 잘리지 않고 채워지도록 */
+    object-fit: cover;
   }
 
   @media (max-width: 991px) {
-    width: 100%; /* 모바일에서 너비 100% */
+    width: 100%;
   }
 `;
 
 const ProjectContent = styled.div`
-  flex-grow: 1; /* 남은 공간 채우기 */
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -136,15 +135,15 @@ const TagList = styled.div`
   margin-top: 1rem;
 
   ${ProjectItem}:nth-child(even) & {
-    justify-content: flex-end; /* 짝수번째는 태그 오른쪽 정렬 */
+    justify-content: flex-end; 
     @media (max-width: 991px) {
-      justify-content: center; /* 모바일에서 가운데 정렬 */
+      justify-content: center;
     }
   }
   ${ProjectItem}:nth-child(odd) & {
-    justify-content: flex-start; /* 홀수번째는 태그 왼쪽 정렬 */
+    justify-content: flex-start; 
     @media (max-width: 991px) {
-      justify-content: center; /* 모바일에서 가운데 정렬 */
+      justify-content: center; 
     }
   }
 `;
@@ -199,38 +198,38 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: '포트폴리오 웹사이트',
-      description: '개인 포트폴리오를 위한 반응형 웹사이트입니다. React와 Styled-components를 사용하여 개발되었으며, 저의 기술 스택과 프로젝트 경험을 소개합니다.',
-      tags: ['React', 'Styled-components', 'Framer Motion'],
-      image: 'https://via.placeholder.com/640x360/60A5FA/FFFFFF?text=Project+1', // 16:9 이미지
-      github: 'https://github.com/your-username/portfolio',
-      demo: 'https://your-portfolio-demo.com'
+      title: '편잇',
+      description: '고교생 해커톤 APPJAM 28회에서 진행한 편의점 꿀 정보를 한번에 볼 수 있는 서비스입니다. 기획과 FE 개발을 담당하였고, 팀장을 맡아 주도적으로 이끌어나갔습니다.',
+      tags: ['HTML', 'CSS', 'JavaScript'],
+      image: '/Assets/pj1.png', 
+      github: 'https://github.com/hjzhhhj/AppJam28th',
+      demo: null
     },
     {
       id: 2,
-      title: '온라인 쇼핑몰 백엔드',
-      description: 'Node.js와 Express를 기반으로 구축된 온라인 쇼핑몰 백엔드 시스템입니다. 사용자 인증, 상품 관리, 주문 처리 기능을 포함합니다.',
-      tags: ['Node.js', 'Express', 'MongoDB', 'JWT'],
-      image: 'https://via.placeholder.com/640x360/10B981/FFFFFF?text=Project+2',
-      github: 'https://github.com/your-username/ecommerce-backend',
+      title: '스피킷',
+      description: '고교생 해커톤 APPJAM 29회에서 진행한 발표를 압도적으로 편안하게 도와주는 서비스입니다. 기획과 FE 개발을 담당하였고, 팀장을 맡아 주도적으로 이끌어나갔습니다.',
+      tags: ['React Native', 'OpenAI', 'Speech Recognition', 'Java'],
+      image: '/Assets/pj2.png',
+      github: 'https://github.com/29-appjam',
       demo: null
     },
     {
       id: 3,
-      title: '모바일 앱 (React Native)',
-      description: 'React Native를 활용하여 개발된 모바일 애플리케이션입니다. 크로스 플랫폼 지원을 통해 iOS와 Android에서 모두 사용 가능합니다.',
-      tags: ['React Native', 'Firebase', 'Redux'],
-      image: 'https://via.placeholder.com/640x360/EF4444/FFFFFF?text=Project+3',
-      github: 'https://github.com/your-username/mobile-app',
-      demo: 'https://your-mobile-app-demo.com'
+      title: 'SIGNAL',
+      description: '개인 프로젝트로 진행한 미림인의 친화력을 증진해주는 서비스입니다. 기획과 FE & BE 개발을 담당하였습니다.',
+      tags: ['HTML', 'CSS', 'Flask'],
+      image: '/Assets/pj3.png',
+      github: 'https://github.com/hjzhhhj/SIGNAL',
+      demo: null
     },
     {
       id: 4,
-      title: '데이터 시각화 대시보드',
-      description: 'Python의 Dash 라이브러리를 사용하여 구현된 대화형 데이터 시각화 대시보드입니다. 복잡한 데이터를 직관적으로 분석하고 이해할 수 있도록 돕습니다.',
-      tags: ['Python', 'Dash', 'Plotly', 'Pandas'],
-      image: 'https://via.placeholder.com/640x360/3B82F6/FFFFFF?text=Project+4',
-      github: 'https://github.com/your-username/data-dashboard',
+      title: 'SCHOK',
+      description: '개인 프로젝트로 진행한 속초 중고등학생에게 정보를 제공해주는 서비스입니다. 기획과 FE 개발을 담당하였습니다.',
+      tags: ['React', 'TypeScript', 'JavaScript'],
+      image: '/Assets/pj4.png',
+      github: 'https://github.com/hjzhhhj/SCHOK',
       demo: null
     }
   ];

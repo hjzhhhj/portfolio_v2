@@ -1,4 +1,3 @@
-// Skills.tsx
 import { motion } from "framer-motion";
 import { Monitor, Server, Palette } from "lucide-react";
 import styled from 'styled-components';
@@ -9,10 +8,10 @@ const SkillsSection = styled.section`
 `;
 
 const MaxWidthContainer = styled.div`
-  max-width: 1200px; /* <-- 이 값을 960px에서 1200px로 변경했습니다. */
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 4vw; /* <-- 이 값을 0 1.5rem에서 0 4vw로 변경했습니다. */
+  padding: 0 2rem; 
 `;
 
 const TitleContainer = styled(motion.div)`
@@ -41,17 +40,17 @@ const UnderlineDiv = styled.div`
 const SkillsGrid = styled.div`
   display: grid;
   gap: 2rem;
+  justify-items: center; 
 
   @media (min-width: 768px) {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 4rem; /* 이 값은 이미 4rem으로 설정되어 있습니다. */
+    gap: 3rem;
   }
 `;
 
 const SkillCategoryCard = styled(motion.div)`
   width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 320px; 
   background-color: rgba(18, 18, 18, 0.5);
   backdrop-filter: blur(8px);
   border-radius: 1.5rem;
@@ -91,7 +90,7 @@ const CategoryTitle = styled.h3`
 const SkillList = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1.5rem; /* 이 값은 개별 스킬 항목 간의 세로 간격입니다. */
+  gap: 1.5rem;
 `;
 
 const SkillItem = styled(motion.div)`
@@ -135,6 +134,7 @@ const Skills = () => {
     frontend: {
       title: 'Frontend',
       icon: Monitor,
+      gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
       skills: [
         { name: 'React', level: 90 },
         { name: 'React Native', level: 75 },
@@ -147,6 +147,7 @@ const Skills = () => {
     backend: {
       title: 'Backend',
       icon: Server,
+      gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
       skills: [
         { name: 'Python', level: 80 },
         { name: 'Java', level: 70 },
@@ -158,6 +159,7 @@ const Skills = () => {
     design: {
       title: 'Design',
       icon: Palette,
+      gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
       skills: [
         { name: 'Figma', level: 85 },
         { name: 'Photoshop', level: 70 },
