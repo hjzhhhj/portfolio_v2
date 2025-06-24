@@ -227,9 +227,18 @@ const Projects = () => {
       id: 4,
       title: 'SCHOK',
       description: '개인 프로젝트로 진행한 속초 중고등학생에게 정보를 제공해주는 서비스입니다. 기획과 FE 개발을 담당하였습니다.',
-      tags: ['React', 'TypeScript', 'JavaScript'],
+      tags: ['React', 'TypeScript', 'Styled Components', 'Framer Motion'],
       image: '/Assets/pj4.png',
       github: 'https://github.com/hjzhhhj/SCHOK',
+      demo: null
+    },
+    {
+      id: 5,
+      title: 'PortFolio',
+      description: '현재 보고 계시는 개인 프로젝트로 진행한 포트폴리오 사이트입니다.',
+      tags: ['React', 'TypeScript', 'Styled Components', 'Framer Motion', 'Lucide'],
+      image: '/Assets/pj5.png',
+      github: 'https://github.com/hjzhhhj/Portfolio_v2',
       demo: null
     }
   ];
