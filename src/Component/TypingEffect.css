@@ -1,0 +1,8 @@
+.typing {
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    display: inline-block;
+    display: inline;
+    border-right: 3px solid rgb(100, 100, 199);
+}
