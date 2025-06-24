@@ -4,7 +4,7 @@ import AboutMe from '../pages/AboutMe';
 import Skills from '../pages/Skills';
 import Projects from '../pages/Projects';
 import Activities from '../pages/Activities';
-import Awards from '../pages/Awards';
+// import Awards from '../pages/Awards';
 import Contact from '../pages/Contact';
 import styled from 'styled-components'; 
 
@@ -58,7 +58,7 @@ const Portfolio = () => {
       <Skills />
       <Projects />
       <Activities />
-      <Awards />
+      {/* <Awards /> */}
       <Contact />
 
       <Footer>
