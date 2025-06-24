@@ -136,12 +136,12 @@ const Skills = () => {
       icon: Monitor,
       gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
       skills: [
-        { name: 'React', level: 90 },
-        { name: 'React Native', level: 75 },
-        { name: 'JavaScript', level: 85 },
+        { name: 'React', level: 70 },
+        { name: 'React Native', level: 25 },
+        { name: 'JavaScript', level: 75 },
         { name: 'TypeScript', level: 70 },
         { name: 'HTML/CSS', level: 95 },
-        { name: 'Styled Components', level: 80 }
+        { name: 'Styled Components', level: 90 }
       ],
     },
     backend: {
@@ -149,11 +149,11 @@ const Skills = () => {
       icon: Server,
       gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
       skills: [
-        { name: 'Python', level: 80 },
+        { name: 'Python', level: 50 },
         { name: 'Java', level: 70 },
-        { name: 'Kotlin', level: 60 },
-        { name: 'C', level: 50 },
-        { name: 'MySQL', level: 75 }
+        { name: 'Kotlin', level: 20 },
+        { name: 'C', level: 30 },
+        { name: 'MySQL', level: 25 }
       ],
     },
     design: {
@@ -161,9 +161,9 @@ const Skills = () => {
       icon: Palette,
       gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
       skills: [
-        { name: 'Figma', level: 85 },
-        { name: 'Photoshop', level: 70 },
-        { name: 'Illustrator', level: 65 }
+        { name: 'Figma', level: 55 },
+        { name: 'Photoshop', level: 50 },
+        { name: 'Illustrator', level: 35 }
       ],
     }
   };

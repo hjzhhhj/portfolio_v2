@@ -153,26 +153,26 @@ const Tag = styled.span`
   color: #60a5fa;
   border: 1px solid rgba(96, 165, 250, 0.3);
   padding: 0.5rem 1rem;
-  border-radius: 9999px; /* pill shape */
+  border-radius: 9999px;
   font-size: 0.875rem;
   white-space: nowrap;
 `;
 
 const ProjectActions = styled.div`
   display: flex;
-  margin-top: 1.5rem; /* 태그 목록과 버튼 사이 간격 */
+  margin-top: 1.5rem;
   gap: 1rem;
 
   ${ProjectItem}:nth-child(even) & {
-    justify-content: flex-end; /* 짝수번째는 버튼 오른쪽 정렬 */
+    justify-content: flex-end; 
     @media (max-width: 991px) {
-      justify-content: center; /* 모바일에서 가운데 정렬 */
+      justify-content: center;
     }
   }
   ${ProjectItem}:nth-child(odd) & {
-    justify-content: flex-start; /* 홀수번째는 버튼 왼쪽 정렬 */
+    justify-content: flex-start; 
     @media (max-width: 991px) {
-      justify-content: center; /* 모바일에서 가운데 정렬 */
+      justify-content: center;
     }
   }
 `;

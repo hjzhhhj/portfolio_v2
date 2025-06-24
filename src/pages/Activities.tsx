@@ -1,18 +1,16 @@
-// Activities.tsx
 import { motion } from "framer-motion";
 import styled from 'styled-components';
-import { Lightbulb, Briefcase, Users, Star } from 'lucide-react'; // 예시 아이콘들
+import { Lightbulb, Briefcase, Users, Star } from 'lucide-react';
 
 const ActivitiesSection = styled.section`
   padding: 5rem 0;
   background-color: #000000;
-  overflow: hidden; /* 오버플로우 숨김 */
+  overflow: hidden;
 `;
 
 const MaxWidthContainer = styled.div`
   max-width: 960px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   padding: 0 1.5rem;
 `;
 
@@ -23,20 +21,20 @@ const TitleContainer = styled(motion.div)`
 
 const SectionTitle = styled.h2`
   font-size: 2.25rem;
-  @media (min-width: 768px) {
-    font-size: 3rem;
-  }
   font-weight: bold;
   color: white;
   margin-bottom: 1rem;
+
+  @media (min-width: 768px) {
+    font-size: 3rem;
+  }
 `;
 
 const UnderlineDiv = styled.div`
   width: 6rem;
   height: 0.25rem;
   background-color: #60a5fa;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
 `;
 
 const TimelineContainer = styled.div`
@@ -54,7 +52,7 @@ const TimelineContainer = styled.div`
     transform: translateX(-50%);
 
     @media (max-width: 767px) {
-      left: 20px; /* 모바일에서 좌측으로 이동 */
+      left: 20px;
       transform: translateX(0);
     }
   }
@@ -65,12 +63,12 @@ const TimelineItem = styled(motion.div)`
   align-items: center;
   margin-bottom: 4rem;
   position: relative;
-  
+  width: 100%;
+
   &:last-child {
     margin-bottom: 0;
   }
 
-  /* 원형 아이콘 */
   &::after {
     content: '';
     position: absolute;
@@ -82,101 +80,84 @@ const TimelineItem = styled(motion.div)`
     background-color: #60a5fa;
     border: 3px solid #000000;
     transform: translate(-50%, -50%);
-    z-index: 1;
+    z-index: 2;
 
     @media (max-width: 767px) {
       left: 20px;
-      transform: translate(-50%, -50%); /* 모바일에서 좌측으로 이동 */
     }
   }
 
-  /* 짝수 번째 아이템 (오른쪽 정렬) */
-  &:nth-child(even) {
-    flex-direction: row-reverse;
-    
-    .activity-content {
-      margin-right: 4rem;
-      text-align: right;
-    }
-    .activity-image {
-      margin-left: 0;
-      margin-right: 4rem;
-      transform-origin: right center;
+  @media (min-width: 768px) {
+    display: grid;
+    grid-template-columns: 1fr 2px 1fr;
+    column-gap: 48px;
+    align-items: center;
+
+    &::after {
+    left: 50%; 
+    transform: translate(-50%, -50%);
+}
+
+    &:nth-child(odd) {
+      .activity-image {
+        grid-column: 1; 
+        justify-self: end; 
+      }
+      .activity-content {
+        grid-column: 3; 
+        justify-self: start; 
+      }
     }
 
-    @media (max-width: 767px) {
-      flex-direction: row; 
-      .activity-content {
-        margin-left: 4rem;
-        margin-right: 0;
-        text-align: left;
-      }
-      .activity-image {
-        margin-left: 0;
-        margin-right: 0;
-        transform-origin: center center;
-      }
-    }
+
+&:nth-child(even) {
+  .activity-image {
+    grid-column: 3;
+    grid-row: 1;          
+    justify-self: start;
+    margin-left: 25px;
   }
-
-  /* 홀수 번째 아이템 (왼쪽 정렬) */
-  &:nth-child(odd) {
-    .activity-content {
-      margin-left: 4rem;
-      text-align: left;
-    }
-    .activity-image {
-      margin-right: 0;
-      margin-left: 4rem;
-      transform-origin: left center; /* 왼쪽에서 시작 */
-    }
-
-    @media (max-width: 767px) {
-      .activity-content {
-        margin-left: 4rem; /* 모바일에서 좌측 유지 */
-        margin-right: 0;
-      }
-      .activity-image {
-        margin-left: 0;
-        margin-right: 0;
-        transform-origin: center center;
-      }
-    }
+  .activity-content {
+    grid-column: 1;
+    grid-row: 1;          
+    justify-self: end;
+    margin-right: 25px;
+  }
+}
   }
 
   @media (max-width: 767px) {
-    flex-direction: row; /* 모바일에서는 모두 왼쪽으로 정렬 */
+    display: flex;
+    flex-direction: row;
     justify-content: flex-start;
-    padding-left: 40px; /* 타임라인 선 때문에 안쪽으로 */
-
-    .activity-content {
-      width: 100%;
-      box-sizing: border-box;
-      margin: 0 !important; /* 이전 마진 초기화 */
-      padding-left: 1rem; /* 이미지와의 간격 */
-    }
+    padding-left: 40px;
 
     .activity-image {
       flex-shrink: 0;
-      width: 120px; /* 모바일 이미지 크기 조정 */
-      height: 67.5px; /* 16:9 비율 유지 */
-      margin-right: 1rem; /* 텍스트와의 간격 */
-      margin-left: 0 !important; /* 이전 마진 초기화 */
+      width: 120px;
+      height: 67.5px;
+      margin-right: 1rem;
+    }
+
+    .activity-content {
+      flex: 1;
+      padding-left: 1rem;
+      text-align: left;
     }
   }
 `;
 
 const ActivityImage = styled.div`
-  width: 250px; 
-  height: 140.625px; 
-  background-color: #333; 
+  width: 250px;
+  height: 140.625px;
+  background-color: #333;
   border-radius: 0.75rem;
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   border: 1px solid #4a4a4a;
-  overflow: hidden; 
+  overflow: hidden;
 
   img {
     width: 100%;
@@ -186,15 +167,22 @@ const ActivityImage = styled.div`
 `;
 
 const ActivityContent = styled.div`
+  max-width: 480px;
+  width: 100%;
   background-color: rgba(18, 18, 18, 0.5);
   backdrop-filter: blur(8px);
   border-radius: 1.5rem;
   padding: 1.5rem;
   border: 1px solid #4a4a4a;
-  flex-grow: 1; 
+  flex-grow: 1;
+  min-height: 220px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
-  
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
   ${TimelineItem}:hover & {
     border-color: rgba(96, 165, 250, 0.5);
   }
@@ -216,6 +204,9 @@ const ActivityPeriod = styled.p`
 const ActivityDescription = styled.p`
   color: #d1d5db;
   line-height: 1.6;
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 
 const Activities = () => {
@@ -224,15 +215,15 @@ const Activities = () => {
       id: 1,
       title: 'Microsoft Empowerment Project 교육 이수',
       period: '2024.04 ~ 2024.08',
-      description: '-',
-      image: '/Assets/ac1.png', 
+      description: '클라우드 기술과 AI 서비스 실습, Azure 기반 머신러닝 모델 학습.',
+      image: '/Assets/ac1.png',
       icon: Lightbulb
     },
     {
       id: 2,
       title: 'Yeep 창업경진대회 본선 진출',
       period: '2024.05 ~ 2024.09',
-      description: '-',
+      description: '비즈니스 모델 설계 및 MVP 개발을 통한 창업 경험.',
       image: '/Assets/ac2.png',
       icon: Briefcase
     },
@@ -240,7 +231,7 @@ const Activities = () => {
       id: 3,
       title: '교내 창의 아이디어 경진대회 참여',
       period: '2024.06',
-      description: '-',
+      description: '창의적 아이디어 구체화 및 발표 역량 향상.',
       image: '/Assets/ac3.png',
       icon: Users
     },
@@ -248,7 +239,7 @@ const Activities = () => {
       id: 4,
       title: '중앙대학교 Be Curious! AI 트랙 교육 이수',
       period: '2024.07 - 2024.08',
-      description: '-',
+      description: '딥러닝, 자연어처리, 데이터 분석 중심의 AI 심화 과정.',
       image: '/Assets/ac4.png',
       icon: Star
     },
@@ -256,7 +247,7 @@ const Activities = () => {
       id: 5,
       title: '미림 소프트웨어 챌린지',
       period: '2024.08 - 2024.09',
-      description: '-',
+      description: '문제 해결 중심의 소프트웨어 프로젝트 수행.',
       image: '/Assets/ac5.png',
       icon: Star
     },
@@ -264,7 +255,7 @@ const Activities = () => {
       id: 6,
       title: '청소년 디지털서비스 아이디어 공모전',
       period: '2024.08 - 2024.09',
-      description: '-',
+      description: '혁신적 사용자 경험을 고려한 디지털 서비스 기획.',
       image: '/Assets/ac6.png',
       icon: Star
     },
@@ -272,15 +263,15 @@ const Activities = () => {
       id: 7,
       title: '피우다 프로젝트',
       period: '2024.09 - 2024.10',
-      description: '-',
+      description: '사회적 가치를 고려한 프로젝트 개발 및 사용자 피드백 적용.',
       image: '/Assets/ac7.png',
       icon: Star
     },
     {
       id: 8,
       title: '미림 해커톤',
-      period: '2024.10',
-      description: '-',
+      period: '2024.10.18 - 2024.10.19',
+      description: '아이디어부터 개발까지 전 과정 경험.',
       image: '/Assets/ac8.png',
       icon: Star
     },
@@ -288,23 +279,23 @@ const Activities = () => {
       id: 9,
       title: 'AI 신한은행 아이디어톤',
       period: '2024.10 - 2024.11',
-      description: '-',
+      description: 'AI 기반 금융 서비스 모델 기획.',
       image: '/Assets/ac9.png',
       icon: Star
     },
     {
       id: 10,
-      title: '고교생 해커톤 Smarteen App+ Challenge 28회',
-      period: '2024.12',
-      description: '-',
+      title: '고교생 해커톤 AppJam 28회 장려상',
+      period: '2024.12.21 - 2024.12.22',
+      description: '전국 해커톤 참가, 실사용자 중심 기능 개발.',
       image: '/Assets/ac10.png',
       icon: Star
     },
     {
       id: 11,
-      title: '고교생 해커톤 Smarteen App+ Challenge 29회',
-      period: '2025.02',
-      description: '-',
+      title: '고교생 해커톤 AppJam 29회 최우수상',
+      period: '2025.02.08 - 2025.02.09',
+      description: '이전 경험을 바탕으로 개선된 프로젝트 개발.',
       image: '/Assets/ac11.png',
       icon: Star
     },
@@ -312,8 +303,48 @@ const Activities = () => {
       id: 12,
       title: '전공동아리 MAS 부장 위임',
       period: '2025.03 ~',
-      description: '-',
+      description: '동아리 운영 리더십 및 프로젝트 기획/관리 수행.',
       image: '/Assets/ac12.png',
+      icon: Star
+    },
+    {
+      id: 13,
+      title: 'IT Show 출품작 인사 챌린지 기획 및 개발',
+      period: '2025.03.09 - 2025.06.19',
+      description: '프로젝트 기획/관리 수행',
+      image: '/Assets/ac13.png',
+      icon: Star
+    },
+    {
+      id: 14,
+      title: 'Google AI ESG School 교육 이수',
+      period: '2525.04.06 - 2025.06.21',
+      description: '음성인식과 자연어처리 교육 이수',
+      image: '/Assets/ac14.png',
+      icon: Star
+    },
+    {
+      id: 15,
+      title: 'Google Study Jam 수료',
+      period: '2025.04.01 ~ 2025.06.08',
+      description: 'Google Cloub를 활용한 다양한 실습 및 강의 시청',
+      image: '/Assets/ac15.png',
+      icon: Star
+    },
+    {
+      id: 16,
+      title: '교내 창업 아이템 경진대회',
+      period: '2025.05.20 ~ 2025.06.20',
+      description: '창의적 아이템 구체화 및 발표 역량 향상.',
+      image: '/Assets/ac16.png',
+      icon: Star
+    },
+    {
+      id: 17,
+      title: '교내 창업 아이디어 경진대회',
+      period: '2025.05.28 ~ 2025.06.23',
+      description: '창의적 아이디어 구체화 및 발표 역량 향상.',
+      image: '/Assets/ac17.png',
       icon: Star
     },
   ];
@@ -327,10 +358,8 @@ const Activities = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <SectionTitle>
-            Activities
-          </SectionTitle>
-          <UnderlineDiv></UnderlineDiv>
+          <SectionTitle>Activities</SectionTitle>
+          <UnderlineDiv />
         </TitleContainer>
 
         <TimelineContainer>
@@ -340,7 +369,7 @@ const Activities = () => {
               initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
-              viewport={{ once: true, amount: 0.3 }} 
+              viewport={{ once: true, amount: 0.3 }}
             >
               <ActivityImage className="activity-image">
                 <img src={activity.image} alt={activity.title} />
@@ -348,9 +377,7 @@ const Activities = () => {
               <ActivityContent className="activity-content">
                 <ActivityTitle>{activity.title}</ActivityTitle>
                 <ActivityPeriod>{activity.period}</ActivityPeriod>
-                <ActivityDescription>
-                  {activity.description}
-                </ActivityDescription>
+                <ActivityDescription>{activity.description}</ActivityDescription>
               </ActivityContent>
             </TimelineItem>
           ))}

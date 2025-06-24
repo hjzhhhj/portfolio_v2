@@ -38,11 +38,6 @@ const UnderlineDiv = styled.div`
   margin-bottom: 2rem;
 `;
 
-const ContactDescription = styled.p`
-  font-size: 1.25rem;
-  color: #d1d5db;
-`;
-
 const ContactGrid = styled.div`
   display: grid;
   gap: 2rem;
@@ -95,32 +90,6 @@ const ContactValue = styled.p`
   word-break: break-all;
 `;
 
-const CallToActionContainer = styled(motion.div)`
-  text-align: center;
-  margin-top: 4rem;
-`;
-
-const CallToActionText = styled.p`
-  color: #d1d5db;
-  margin-bottom: 2rem;
-  font-size: 1.125rem;
-`;
-
-const ContactButton = styled(motion.button)`
-  padding: 1rem 2rem;
-  background: linear-gradient(to right, #2563eb, #9333ea);
-  color: white;
-  border-radius: 9999px;
-  font-weight: 600;
-  transition: all 0.3s ease-in-out;
-  border: none;
-  cursor: pointer;
-
-  &:hover {
-    background: linear-gradient(to right, #3b82f6, #a855f7);
-  }
-`;
-
 
 const Contact = () => {
   const contacts = [
@@ -163,21 +132,6 @@ const Contact = () => {
             </ContactCard>
           ))}
         </ContactGrid>
-        
-        <CallToActionContainer
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          viewport={{ once: true }}
-        >
-          <CallToActionText>함께 멋진 프로젝트를 만들어봐요!</CallToActionText>
-          <ContactButton
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            연락하기
-          </ContactButton>
-        </CallToActionContainer>
       </MaxWidthContainer>
     </ContactSection>
   );
