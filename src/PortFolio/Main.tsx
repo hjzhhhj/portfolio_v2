@@ -32,8 +32,8 @@ const FooterText = styled.p`
 `;
 
 const Portfolio = () => {
-  const [activeSection, setActiveSection] = useState('home');
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [] = useState('home');
+  const [, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,13 +43,6 @@ const Portfolio = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setActiveSection(sectionId);
-    }
-  };
 
   return (
     <PortfolioContainer>
@@ -58,7 +51,6 @@ const Portfolio = () => {
       <Skills />
       <Projects />
       <Activities />
-      {/* <Awards /> */}
       <Contact />
 
       <Footer>
