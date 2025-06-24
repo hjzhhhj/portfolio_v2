@@ -8,7 +8,7 @@ const AllContainer = styled.div`
 
 const IntroduceSection = styled.div`
   display: flex;
-  margin-top: 17.5rem;
+  margin-top: 15.5rem;
   min-height: 100vh;
   flex-direction: column;
   padding: 0 7.5vw;
@@ -17,7 +17,6 @@ const IntroduceSection = styled.div`
 
 const HiText = styled.p`
   color: white;
-  font-family: "Pretendard", sans-serif;
   font-size: clamp(2.5rem, 5vw, 3.75rem);
   font-weight: 700;
   word-break: break-word;
@@ -38,9 +37,9 @@ const MainText = styled.p`
 `;
 
 const MottoText = styled.p`
-  color: rgb(170, 170, 170);
+  color: rgba(170, 170, 170, 0.6);
   font-size: clamp(1rem, 2vw, 1.25rem);
-  margin-top: 1.75rem;
+  margin-top: 2rem;
   font-weight: 400;
 `;
 

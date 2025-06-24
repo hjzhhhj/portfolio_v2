@@ -3,17 +3,17 @@ import styled, { keyframes } from 'styled-components';
 
 const blink = keyframes`
   from, to { border-color: transparent; }
-  50% { border-color: rgb(100, 100, 199); }
+  50% { border-color: #60a5fa; }
 `;
 
 const TypingSpan = styled.span`
   white-space: nowrap;
   overflow: hidden;
-  border-right: 3px solid rgb(100, 100, 199);
+  border-right: 3px solid #60a5fa;
   display: inline;
   vertical-align: baseline;
   animation: ${blink} 0.75s step-end infinite;
-  color: rgb(100, 100, 199); 
+  color: #60a5fa; 
 `;
 
 const TypingEffect = () => {

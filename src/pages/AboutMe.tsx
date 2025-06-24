@@ -24,13 +24,13 @@ const SectionTitle = styled.h2`
   @media (min-width: 768px) {
     font-size: 3rem;
   }
-  font-weight: bold;
+  font-weight: 700;
   color: white;
   margin-bottom: 1rem;
 `;
 
 const UnderlineDiv = styled.div`
-  width: 6rem;
+  width: 8rem;
   height: 0.25rem;
   background-color: #60a5fa;
   margin-left: auto;
@@ -53,7 +53,7 @@ const ImageContainer = styled(motion.div)`
 
 const ImageWrapper = styled.div`
   width: 20rem;
-  height: 20rem;
+  height: 25rem;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 1.5rem;
@@ -74,21 +74,10 @@ const ProfileImage = styled.img`
   border-radius: 1.5rem;
 `;
 
-const ImageCaption = styled.p`
-  color: #a0a0a0;
-  font-size: 0.875rem;
-`;
-
 const TextContent = styled(motion.div)`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-`;
-
-const Subtitle = styled.h3`
-  font-size: 1.875rem;
-  font-weight: bold;
-  color: white;
 `;
 
 const DescriptionWrapper = styled.div`
@@ -126,7 +115,6 @@ const AboutMe = () => {
             <ImageWrapper>
               <ProfileImage src={User} alt="About Me" />
             </ImageWrapper>
-            <ImageCaption>여기에 실제 사진을 넣어주세요</ImageCaption>
           </ImageContainer>
           
           <TextContent
@@ -135,18 +123,26 @@ const AboutMe = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <Subtitle>안녕하세요!</Subtitle>
             <DescriptionWrapper>
               <p>
-                저는 새로운 기술을 배우고 적용하는 것을 좋아하는 개발자입니다.
-                사용자 경험을 중시하며, 깔끔하고 효율적인 코드를 작성하기 위해 노력합니다.
+                저는 미림마이스터고등학교 뉴미디어소프트웨어과에서 프론트엔드 개발을 공부하고 있는 정희진입니다.
+                개발자로서 소통과 협업을 가장 중요한 가치로 생각하며,
+                혼자 해결하는 것보다 팀원들과 생각을 나누고 함께 방향을 잡아가는 과정에서 더 나은 결과가 나온다고 생각합니다.
               </p>
               <p>
-                프론트엔드부터 백엔드까지 풀스택 개발 경험을 바탕으로
-                다양한 프로젝트에 참여하며 실력을 키워나가고 있습니다.
+                전공 동아리 부장으로 활동하며 다양한 사람들과 협업하며 팀워크를 키웠고,
+                다양한 프로젝트에서 PM으로서의 역할을 수행하며 프로젝트의 목표 설정, 일정 조율, 문제 해결까지 전체적인 흐름을 조율해본 경험도 있습니다.
+                항상 사용자의 입장에서 생각하려고 노력하며, 팀과 함께 더 나은 결과를 만들기 위해 고민하는 개발자가 되고자 합니다.
               </p>
               <p>
-                팀워크를 중시하며, 새로운 도전을 두려워하지 않는 개발자가 되고 싶습니다.
+                또한, 저는 꾸준한 학습과 시간 관리를 통해 기술적인 역량을 키우고 있습니다.
+                새로운 기술에 대한 열정을 가지고, 문제를 해결하는 과정에서 얻은 경험과 교훈을 바탕으로 계속 발전하려고 노력합니다.
+                때로는 더 나은 해결책을 찾기 위해 실험적 접근을 시도하기도 하고, 그 과정에서 성취감을 느끼며 성장하고 있습니다.
+              </p>
+              <p>
+                제 목표는 협업을 통해 서로의 역량을 강화하며, 더 나은 결과를 만들어내는 것입니다.
+                그동안 다양한 프로젝트를 통해 팀워크의 중요성을 깨달았고, 앞으로도 팀원들과 함께 협력하며 목표를 이루는 경험을 계속 쌓아가고 싶습니다.
+                끊임없이 배우고 성장하는 개발자가 되어, 더 큰 가치를 창출하는 데 기여하고 싶습니다.
               </p>
             </DescriptionWrapper>
           </TextContent>
