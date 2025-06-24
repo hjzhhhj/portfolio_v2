@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
 const ActivitiesSection = styled.section`
   padding: 5rem 0;
