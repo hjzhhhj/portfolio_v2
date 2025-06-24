@@ -37,18 +37,6 @@ const MainText = styled.p`
   align-items: center;
 `;
 
-const TypingSpan = styled.span`
-  color: rgb(100, 100, 199);
-  display: inline;
-`;
-
-const MobileBreak = styled.br`
-  display: none;
-  @media (max-width: 600px) {
-    display: inline;
-  }
-`;
-
 const MottoText = styled.p`
   color: rgb(170, 170, 170);
   font-size: clamp(1rem, 2vw, 1.25rem);
@@ -121,9 +109,7 @@ function Introduce() {
                     transition={{ duration: 1.2, ease: "easeOut", delay: 0.8 }}
                 >
                     <MainText>
-                        <TypingSpan><TypingEffect /></TypingSpan>&nbsp;
-                        <MobileBreak />
-                        <span>개발자, 정희진입니다</span>
+                        <TypingEffect />&nbsp;개발자, 정희진입니다
                     </MainText>
                     <MottoText>네가 세상에서 보고 싶은 변화가 되어라 – 마하트마 간디</MottoText>
                 </motion.div>

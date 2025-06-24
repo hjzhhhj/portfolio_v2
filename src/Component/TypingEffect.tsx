@@ -10,8 +10,10 @@ const TypingSpan = styled.span`
   white-space: nowrap;
   overflow: hidden;
   border-right: 3px solid rgb(100, 100, 199);
-  display: inline-block;
+  display: inline;
+  vertical-align: baseline;
   animation: ${blink} 0.75s step-end infinite;
+  color: rgb(100, 100, 199); 
 `;
 
 const TypingEffect = () => {
