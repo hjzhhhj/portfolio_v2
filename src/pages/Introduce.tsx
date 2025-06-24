@@ -91,35 +91,35 @@ const MoreButton = styled.button`
 `;
 
 function Introduce() {
-    return (
-        <AllContainer>
-            <IntroduceSection>
-                <motion.div
-                    initial={{ opacity: 0, y: 40, scale: 0.95 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    transition={{ duration: 1.2, ease: "easeOut", delay: 0 }}
-                >
-                    <HiText>안녕하세요!</HiText>
-                </motion.div>
+  return (
+    <AllContainer>
+      <IntroduceSection>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0 }}
+        >
+          <HiText>안녕하세요!</HiText>
+        </motion.div>
 
-                <motion.div
-                    initial={{ opacity: 0, y: 40, scale: 0.95 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    transition={{ duration: 1.2, ease: "easeOut", delay: 0.8 }}
-                >
-                    <MainText>
-                        <TypingEffect />&nbsp;개발자, 정희진입니다
-                    </MainText>
-                    <MottoText>네가 세상에서 보고 싶은 변화가 되어라 – 마하트마 간디</MottoText>
-                </motion.div>
-                <MoreButtonWrapper>
-                    <Link to="about" smooth={true} duration={800} offset={-70}>
-                        <MoreButton>더보기</MoreButton>
-                    </Link>
-                </MoreButtonWrapper>
-            </IntroduceSection>
-        </AllContainer>
-    );
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+        >
+          <MainText>
+            <TypingEffect />&nbsp;개발자, 정희진입니다
+          </MainText>
+          <MottoText>네가 세상에서 보고 싶은 변화가 되어라 – 마하트마 간디</MottoText>
+        </motion.div>
+        <MoreButtonWrapper>
+          <Link to="about" smooth={true} duration={800} offset={-70}>
+            <MoreButton>더보기</MoreButton>
+          </Link>
+        </MoreButtonWrapper>
+      </IntroduceSection>
+    </AllContainer>
+  );
 }
 
 export default Introduce;
