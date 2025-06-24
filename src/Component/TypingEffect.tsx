@@ -1,5 +1,18 @@
 import { useEffect, useState } from "react";
-import './TypingEffect.css';
+import styled, { keyframes } from 'styled-components';
+
+const blink = keyframes`
+  from, to { border-color: transparent; }
+  50% { border-color: rgb(100, 100, 199); }
+`;
+
+const TypingSpan = styled.span`
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid rgb(100, 100, 199);
+  display: inline-block;
+  animation: ${blink} 0.75s step-end infinite;
+`;
 
 const TypingEffect = () => {
     const texts = [
@@ -48,12 +61,12 @@ const TypingEffect = () => {
 
         const timer = setTimeout(updateText, isDeleting ? 100 : 150);
         return () => clearTimeout(timer);
-    }, [index, isDeleting, wordIndex, cooldown]);
+    }, [index, isDeleting, wordIndex, cooldown, texts]);
 
     return (
-        <div className="typing">
+        <TypingSpan>
             {textContent}
-        </div>
+        </TypingSpan>
     );
 };
 
