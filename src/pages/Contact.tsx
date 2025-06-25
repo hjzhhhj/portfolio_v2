@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, Phone } from "lucide-react";
+import { Github, Linkedin, Mail, FileText } from "lucide-react";
 import styled from 'styled-components';
 
 const ContactSection = styled.section`
@@ -50,7 +50,7 @@ const ContactGrid = styled.div`
   }
 `;
 
-const ContactCard = styled(motion.div)`
+const ContactCard = styled(motion.a)`
   background-color: rgba(18, 18, 18, 0.5);
   backdrop-filter: blur(8px);
   border-radius: 1.5rem;
@@ -59,9 +59,14 @@ const ContactCard = styled(motion.div)`
   border: 1px solid #4a4a4a;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  display: block;
 
   &:hover {
     border-color: rgba(96, 165, 250, 0.5);
+    text-decoration: none;
+    color: inherit;
   }
 `;
 
@@ -90,13 +95,36 @@ const ContactValue = styled.p`
   word-break: break-all;
 `;
 
-
 const Contact = () => {
   const contacts = [
-    { icon: Github, label: 'GitHub', value: 'github.com/hjzhhhj', gradient: 'linear-gradient(to right, #4b5563, #1f2937)' },
-    { icon: Linkedin, label: 'LinkedIn', value: 'linkedin.com/in/hjzhhhj', gradient: 'linear-gradient(to right, #2563eb, #1e40af)' },
-    { icon: Mail, label: 'Email', value: 'jhj090120@gmail.com', gradient: 'linear-gradient(to right, #dc2626, #db2777)' },
-    { icon: Phone, label: 'Phone', value: '010-6283-7513', gradient: 'linear-gradient(to right, #16a34a, #059669)' }
+    { 
+      icon: Github, 
+      label: 'GitHub', 
+      value: 'github.com/hjzhhhj', 
+      gradient: 'linear-gradient(to right, #4b5563, #1f2937)',
+      href: 'https://github.com/hjzhhhj'
+    },
+    { 
+      icon: Linkedin, 
+      label: 'LinkedIn', 
+      value: 'linkedin.com/in/hjzhhhj', 
+      gradient: 'linear-gradient(to right, #2563eb, #1e40af)',
+      href: 'https://linkedin.com/in/hjzhhhj'
+    },
+    { 
+      icon: Mail, 
+      label: 'Email', 
+      value: 'jhj090120@gmail.com', 
+      gradient: 'linear-gradient(to right, #dc2626, #db2777)',
+      href: 'mailto:jhj090120@gmail.com'
+    },
+    { 
+      icon: FileText, 
+      label: 'Notion Portfolio', 
+      value: 'notion portfolio', 
+      gradient: 'linear-gradient(to right, #16a34a, #059669)',
+      href: 'https://notion.so/your-portfolio-link'
+    }
   ];
 
   return (
@@ -115,9 +143,12 @@ const Contact = () => {
         </TitleContainer>
 
         <ContactGrid>
-          {contacts.map(({ icon: Icon, label, value, gradient }, index) => (
+          {contacts.map(({ icon: Icon, label, value, gradient, href }, index) => (
             <ContactCard
               key={label}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
