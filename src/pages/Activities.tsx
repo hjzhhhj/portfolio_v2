@@ -60,7 +60,7 @@ const TimelineContainer = styled.div`
 
 const TimelineItem = styled(motion.div)`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: 4rem;
   position: relative;
   width: 100%;
@@ -72,7 +72,7 @@ const TimelineItem = styled(motion.div)`
   &::after {
     content: '';
     position: absolute;
-    top: 50%;
+    top: 30px;
     left: 50%;
     width: 20px;
     height: 20px;
@@ -84,6 +84,7 @@ const TimelineItem = styled(motion.div)`
 
     @media (max-width: 767px) {
       left: 20px;
+      top: 50px;
     }
   }
 
@@ -91,12 +92,12 @@ const TimelineItem = styled(motion.div)`
     display: grid;
     grid-template-columns: 1fr 2px 1fr;
     column-gap: 48px;
-    align-items: center;
+    align-items: flex-start;
 
     &::after {
-    left: 50%; 
-    transform: translate(-50%, -50%);
-}
+      left: 50%; 
+      transform: translate(-50%, -50%);
+    }
 
     &:nth-child(odd) {
       .activity-image {
@@ -109,39 +110,38 @@ const TimelineItem = styled(motion.div)`
       }
     }
 
-
-&:nth-child(even) {
-  .activity-image {
-    grid-column: 3;
-    grid-row: 1;          
-    justify-self: start;
-    margin-left: 25px;
-  }
-  .activity-content {
-    grid-column: 1;
-    grid-row: 1;          
-    justify-self: end;
-    margin-right: 25px;
-  }
-}
+    &:nth-child(even) {
+      .activity-image {
+        grid-column: 3;
+        grid-row: 1;          
+        justify-self: start;
+        margin-left: 25px;
+      }
+      .activity-content {
+        grid-column: 1;
+        grid-row: 1;          
+        justify-self: end;
+        margin-right: 25px;
+      }
+    }
   }
 
   @media (max-width: 767px) {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: flex-start;
     padding-left: 40px;
+    gap: 1rem;
 
     .activity-image {
-      flex-shrink: 0;
-      width: 120px;
-      height: 67.5px;
-      margin-right: 1rem;
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      aspect-ratio: 16/9;
     }
 
     .activity-content {
-      flex: 1;
-      padding-left: 1rem;
+      width: 100%;
       text-align: left;
     }
   }
@@ -164,6 +164,12 @@ const ActivityImage = styled.div`
     height: 100%;
     object-fit: cover;
   }
+
+  @media (max-width: 767px) {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
 `;
 
 const ActivityContent = styled.div`
@@ -175,7 +181,7 @@ const ActivityContent = styled.div`
   padding: 1.5rem;
   border: 1px solid #4a4a4a;
   flex-grow: 1;
-  min-height: 220px;
+  min-height: 200px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
 
@@ -186,19 +192,44 @@ const ActivityContent = styled.div`
   ${TimelineItem}:hover & {
     border-color: rgba(96, 165, 250, 0.5);
   }
+
+  @media (max-width: 767px) {
+    max-width: 100%;
+    min-height: auto;
+    padding: 1.25rem;
+  }
 `;
 
 const ActivityTitle = styled.h3`
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: bold;
   color: white;
   margin-bottom: 0.5rem;
+  line-height: 1.3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  @media (max-width: 767px) {
+    font-size: 1.1rem;
+    white-space: normal;
+    line-height: 1.4;
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    font-size: 1.2rem;
+  }
 `;
 
 const ActivityPeriod = styled.p`
   color: #60a5fa;
   font-weight: 600;
   margin-bottom: 1rem;
+  font-size: 0.9rem;
+
+  @media (max-width: 767px) {
+    font-size: 0.85rem;
+  }
 `;
 
 const ActivityDescription = styled.p`
@@ -207,6 +238,12 @@ const ActivityDescription = styled.p`
   flex-grow: 1;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-size: 0.95rem;
+
+  @media (max-width: 767px) {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
 `;
 
 const Activities = () => {
