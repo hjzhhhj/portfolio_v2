@@ -152,8 +152,8 @@ const Skills = () => {
       ],
     },
     design: {
-      title: 'Other',
-      subtitle: '이외의 툴 등',
+      title: 'Tools & Other',
+      subtitle: '툴과 이외의 것들',
       skills: [
         { name: 'Figma', level: 55 },
         { name: 'Photoshop', level: 50 },

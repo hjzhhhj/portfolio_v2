@@ -101,29 +101,29 @@ const Contact = () => {
       icon: Github, 
       label: 'GitHub', 
       value: 'github.com/hjzhhhj', 
-      gradient: 'linear-gradient(to right, #4b5563, #1f2937)',
+      gradient: 'linear-gradient(to right, #5563f7, #60a5fa)',
       href: 'https://github.com/hjzhhhj'
     },
     { 
       icon: Linkedin, 
       label: 'LinkedIn', 
       value: 'linkedin.com/in/hjzhhhj', 
-      gradient: 'linear-gradient(to right, #2563eb, #1e40af)',
-      href: 'https://linkedin.com/in/hjzhhhj'
+      gradient: 'linear-gradient(to right, #60a5fa, #5563f7)',
+      href: 'https://www.linkedin.com/in/%EC%A7%84-%ED%9D%AC-31b921370/'
     },
     { 
       icon: Mail, 
       label: 'Email', 
       value: 'jhj090120@gmail.com', 
-      gradient: 'linear-gradient(to right, #dc2626, #db2777)',
+      gradient: 'linear-gradient(to right, #5563f7, #60a5fa)',
       href: 'mailto:jhj090120@gmail.com'
     },
     { 
       icon: FileText, 
       label: 'Notion Portfolio', 
-      value: 'notion portfolio', 
-      gradient: 'linear-gradient(to right, #16a34a, #059669)',
-      href: 'https://notion.so/your-portfolio-link'
+      value: 'Heejin Jung', 
+      gradient: 'linear-gradient(to right, #60a5fa, #5563f7)',
+      href: 'https://hyper-church-674.notion.site/1f3f70533290803fa3d3c014ad384baf?pvs=74'
     }
   ];
 

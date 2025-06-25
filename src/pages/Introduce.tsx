@@ -8,7 +8,7 @@ const AllContainer = styled.div`
 
 const IntroduceSection = styled.div`
   display: flex;
-  margin-top: 15.5rem;
+  margin-top: 15rem;
   min-height: 100vh;
   flex-direction: column;
   padding: 0 7.5vw;
