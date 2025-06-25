@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Monitor, Server, Palette } from "lucide-react";
 import styled from 'styled-components';
 
 const SkillsSection = styled.section`
@@ -68,23 +67,20 @@ const CategoryHeader = styled.div`
   margin-bottom: 2rem;
 `;
 
-const IconWrapper = styled.div<{ $gradient: string }>`
-  width: 5rem;
-  height: 5rem;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 1.5rem;
-  border-radius: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: ${({ $gradient }) => $gradient};
-`;
-
 const CategoryTitle = styled.h3`
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   font-weight: bold;
   color: white;
+  background: linear-gradient(135deg, #60a5fa 0%, #5563f7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+`;
+
+const CategorySubtitle = styled.p`
+  color: #9ca3af;
+  font-size: 0.9rem;
 `;
 
 const SkillList = styled.div`
@@ -112,6 +108,7 @@ const SkillItem = styled(motion.div)`
 
 const SkillName = styled.span`
   margin-bottom: 0.5rem;
+  font-size: 1rem;
 `;
 
 const SkillLevelBar = styled.div`
@@ -124,7 +121,7 @@ const SkillLevelBar = styled.div`
 
 const SkillLevelFill = styled(motion.div)<{ $level: number }>`
   height: 100%;
-  background-color: #60a5fa;
+  background: linear-gradient(90deg, #60a5fa 0%, #5563f7 100%);
   border-radius: 0.25rem;
   width: ${props => props.$level}%;
 `;
@@ -133,8 +130,7 @@ const Skills = () => {
   const skills = {
     frontend: {
       title: 'Frontend',
-      icon: Monitor,
-      gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+      subtitle: '사용자 인터페이스 개발',
       skills: [
         { name: 'React', level: 70 },
         { name: 'React Native', level: 25 },
@@ -146,8 +142,7 @@ const Skills = () => {
     },
     backend: {
       title: 'Backend',
-      icon: Server,
-      gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+      subtitle: '서버 및 데이터베이스 개발',
       skills: [
         { name: 'Python', level: 50 },
         { name: 'Java', level: 70 },
@@ -157,9 +152,8 @@ const Skills = () => {
       ],
     },
     design: {
-      title: 'Design',
-      icon: Palette,
-      gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
+      title: 'Other',
+      subtitle: '이외의 툴 등',
       skills: [
         { name: 'Figma', level: 55 },
         { name: 'Photoshop', level: 50 },
@@ -194,10 +188,8 @@ const Skills = () => {
               whileHover={{ y: -10, scale: 1.02 }}
             >
               <CategoryHeader>
-                <IconWrapper $gradient={category.gradient}>
-                  <category.icon size={40} color="white" />
-                </IconWrapper>
                 <CategoryTitle>{category.title}</CategoryTitle>
+                <CategorySubtitle>{category.subtitle}</CategorySubtitle>
               </CategoryHeader>
               <SkillList>
                 {category.skills.map((skill, skillIndex) => (
