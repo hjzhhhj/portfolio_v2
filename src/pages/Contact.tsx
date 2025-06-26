@@ -3,6 +3,7 @@ import { Github, Linkedin, Mail, FileText } from "lucide-react";
 import styled from 'styled-components';
 
 const ContactSection = styled.section`
+  font-family: 'Pretendard', sans-serif;
   padding: 5rem 0;
   background-color: #000000;
 `;
@@ -109,7 +110,7 @@ const Contact = () => {
       label: 'LinkedIn', 
       value: 'linkedin.com/in/hjzhhhj', 
       gradient: 'linear-gradient(to right, #60a5fa, #5563f7)',
-      href: 'https://www.linkedin.com/in/%EC%A7%84-%ED%9D%AC-31b921370/'
+      href: 'https://www.linkedin.com/in/%ED%9D%AC%EC%A7%84-%EC%A0%95-31b921370/'
     },
     { 
       icon: Mail, 

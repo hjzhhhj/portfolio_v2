@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import styled from 'styled-components';
 
 const SkillsSection = styled.section`
+  font-family: 'Pretendard', sans-serif;
   padding: 5rem 0;
   background-color: #000000;
 `;

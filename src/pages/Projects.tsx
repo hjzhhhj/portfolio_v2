@@ -3,6 +3,7 @@ import { ExternalLink } from "lucide-react";
 import styled from 'styled-components';
 
 const ProjectsSection = styled.section`
+  font-family: 'Pretendard', sans-serif;
   padding: 5rem 0;
   background-color: #000000;
   overflow: hidden;
@@ -216,6 +217,15 @@ const Projects = () => {
     },
     {
       id: 3,
+      title: 'PortFolio',
+      description: '현재 보고 계시는 개인 프로젝트로 진행한 포트폴리오 사이트입니다.',
+      tags: ['React', 'TypeScript', 'Styled Components', 'Framer Motion', 'Lucide'],
+      image: '/Assets/pj5.png',
+      github: 'https://github.com/hjzhhhj/Portfolio_v2',
+      demo: null
+    },
+    {
+      id: 4,
       title: 'SIGNAL',
       description: '개인 프로젝트로 진행한 미림인의 친화력을 증진해주는 서비스입니다. 기획과 FE & BE 개발을 담당하였습니다.',
       tags: ['HTML', 'CSS', 'Flask'],
@@ -224,7 +234,7 @@ const Projects = () => {
       demo: null
     },
     {
-      id: 4,
+      id: 5,
       title: 'SCHOK',
       description: '개인 프로젝트로 진행한 속초 중고등학생에게 정보를 제공해주는 서비스입니다. 기획과 FE 개발을 담당하였습니다.',
       tags: ['React', 'TypeScript', 'Styled Components', 'Framer Motion'],
@@ -233,13 +243,22 @@ const Projects = () => {
       demo: null
     },
     {
-      id: 5,
-      title: 'PortFolio',
-      description: '현재 보고 계시는 개인 프로젝트로 진행한 포트폴리오 사이트입니다.',
-      tags: ['React', 'TypeScript', 'Styled Components', 'Framer Motion', 'Lucide'],
-      image: '/Assets/pj5.png',
-      github: 'https://github.com/hjzhhhj/Portfolio_v2',
-      demo: null
+      id: 6,
+      title: '인스타 급식 알리미',
+      description: '개인 프로젝트로 진행한 속초고등학교의 급식을 매일 0시 0분에 각 인스타 스토리에 알려주는 서비스입니다.',
+      tags: ['Python'],
+      image: '/Assets/pj6.png',
+      github: 'https://github.com/hjzhhhj/Sokgo_Today',
+      demo: 'https://www.instagram.com/sokgo_today/'
+    },
+    {
+      id: 7,
+      title: '인스타 급식 알리미',
+      description: '개인 프로젝트로 진행한 고성중 • 고등학교의 급식을 매일 0시 0분에 각 인스타 스토리에 알려주는 서비스입니다.',
+      tags: ['Python'],
+      image: '/Assets/pj6.png',
+      github: 'https://github.com/hjzhhhj/GMHS_TODAY',
+      demo: 'https://www.instagram.com/gmhs_today/'
     }
   ];
 

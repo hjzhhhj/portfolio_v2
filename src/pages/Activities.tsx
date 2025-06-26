@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Lightbulb, Briefcase, Users, Star } from 'lucide-react';
 
 const ActivitiesSection = styled.section`
+  font-family: 'Pretendard', sans-serif;
   padding: 5rem 0;
   background-color: #000000;
   overflow: hidden;

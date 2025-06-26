@@ -9,6 +9,7 @@ import Contact from '../pages/Contact';
 import styled from 'styled-components'; 
 
 const PortfolioContainer = styled.div`
+  font-family: 'Pretendard', sans-serif;
   background-color: #000000;
   color: white;
   min-height: 100vh;

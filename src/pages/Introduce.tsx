@@ -4,6 +4,7 @@ import styled, { keyframes } from 'styled-components';
 import TypingEffect from "../Component/TypingEffect";
 
 const AllContainer = styled.div`
+  font-family: 'Pretendard', sans-serif;
 `;
 
 const IntroduceSection = styled.div`

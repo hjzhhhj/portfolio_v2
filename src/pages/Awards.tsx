@@ -3,6 +3,7 @@ import { Award } from "lucide-react";
 import styled from 'styled-components';
 
 const AwardsSection = styled.section`
+  font-family: 'Pretendard', sans-serif;
   padding: 5rem 0;
   background-color: #000000;
 `;

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import User from "/Assets/Me.png";
 
 const AboutSection = styled.section`
+  font-family: 'Pretendard', sans-serif;
   padding: 3rem 0;
   background-color: #000000;
   
