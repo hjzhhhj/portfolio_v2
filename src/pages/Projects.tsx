@@ -1,16 +1,16 @@
 import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const ProjectsSection = styled.section`
-  font-family: 'Pretendard', sans-serif;
+  font-family: "Pretendard", sans-serif;
   padding: 5rem 0;
   background-color: #000000;
   overflow: hidden;
 `;
 
 const MaxWidthContainer = styled.div`
-  max-width: 1200px; 
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   padding: 0 4vw;
@@ -42,12 +42,12 @@ const UnderlineDiv = styled.div`
 const ProjectList = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 5rem; 
+  gap: 5rem;
 `;
 
 const ProjectItem = styled(motion.div)<{ $isEven: boolean }>`
   display: flex;
-  flex-direction: ${props => props.$isEven ? 'row-reverse' : 'row'}; 
+  flex-direction: ${(props) => (props.$isEven ? "row-reverse" : "row")};
   align-items: center;
   gap: 3rem;
   backdrop-filter: blur(8px);
@@ -61,25 +61,26 @@ const ProjectItem = styled(motion.div)<{ $isEven: boolean }>`
     transform: translateY(-5px);
   }
 
-  @media (max-width: 991px) { 
+  @media (max-width: 991px) {
     flex-direction: column;
     text-align: center;
     padding: 2rem;
     gap: 2rem;
 
-    .project-image-container, .project-content {
+    .project-image-container,
+    .project-content {
       margin: 0 !important;
     }
   }
 `;
 
 const ImageContainer = styled.div`
-  flex-shrink: 0; 
-  width: 50%; 
-  aspect-ratio: 16 / 9; 
-  background-color: #333; 
+  flex-shrink: 0;
+  width: 50%;
+  aspect-ratio: 16 / 9;
+  background-color: #333;
   border-radius: 1rem;
-  overflow: hidden; 
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -136,15 +137,15 @@ const TagList = styled.div`
   margin-top: 1rem;
 
   ${ProjectItem}:nth-child(even) & {
-    justify-content: flex-end; 
+    justify-content: flex-end;
     @media (max-width: 991px) {
       justify-content: center;
     }
   }
   ${ProjectItem}:nth-child(odd) & {
-    justify-content: flex-start; 
+    justify-content: flex-start;
     @media (max-width: 991px) {
-      justify-content: center; 
+      justify-content: center;
     }
   }
 `;
@@ -165,13 +166,13 @@ const ProjectActions = styled.div`
   gap: 1rem;
 
   ${ProjectItem}:nth-child(even) & {
-    justify-content: flex-end; 
+    justify-content: flex-end;
     @media (max-width: 991px) {
       justify-content: center;
     }
   }
   ${ProjectItem}:nth-child(odd) & {
-    justify-content: flex-start; 
+    justify-content: flex-start;
     @media (max-width: 991px) {
       justify-content: center;
     }
@@ -199,67 +200,134 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: '편잇',
-      description: '고교생 해커톤 APPJAM 28회에서 진행한 편의점 꿀 정보를 한번에 볼 수 있는 서비스입니다. 기획과 FE 개발을 담당하였고, 팀장을 맡아 주도적으로 이끌어나갔습니다.',
-      tags: ['HTML', 'CSS', 'JavaScript'],
-      image: '/Assets/pj1.png', 
-      github: 'https://github.com/hjzhhhj/AppJam28th',
-      demo: null
+      title: "편잇",
+      description:
+        "전국 고교생 해커톤 APPJAM 28회에서 진행한 편의점 꿀 정보를 한번에 볼 수 있는 서비스입니다. 기획과 FE 개발을 담당하였고, 팀장을 맡아 주도적으로 이끌어나갔습니다.",
+      tags: ["HTML", "CSS", "JavaScript"],
+      image: "/Assets/pyeonit.png",
+      github: "https://github.com/hjzhhhj/AppJam28th",
+      demo: null,
     },
     {
       id: 2,
-      title: '스피킷',
-      description: '고교생 해커톤 APPJAM 29회에서 진행한 발표를 압도적으로 편안하게 도와주는 서비스입니다. 기획과 FE 개발을 담당하였고, 팀장을 맡아 주도적으로 이끌어나갔습니다.',
-      tags: ['React Native', 'OpenAI', 'Speech Recognition', 'Java'],
-      image: '/Assets/pj2.png',
-      github: 'https://github.com/29-appjam',
-      demo: null
+      title: "스피킷",
+      description:
+        "전국 고교생 해커톤 APPJAM 29회에서 진행한 발표를 압도적으로 편안하게 도와주는 서비스입니다. 기획과 FE 개발을 담당하였고, 팀장을 맡아 주도적으로 이끌어나갔습니다.",
+      tags: ["React Native", "Styled Components", "Spring Boot", "MySQL"],
+      image: "/Assets/speakit.png",
+      github: "https://github.com/29-appjam",
+      demo: null,
     },
     {
       id: 3,
-      title: 'PortFolio',
-      description: '현재 보고 계시는 개인 프로젝트로 진행한 포트폴리오 사이트입니다.',
-      tags: ['React', 'TypeScript', 'Styled Components', 'Framer Motion', 'Lucide'],
-      image: '/Assets/pj5.png',
-      github: 'https://github.com/hjzhhhj/Portfolio_v2',
-      demo: null
+      title: "프리하이스쿨 타자연습게임",
+      description:
+        "동아리 프로젝트로 진행한 프리하이스쿨 타자연습게임입니다. 기획과 FE 개발을 담당하였습니다.",
+      tags: ["React", "NestJS", "TypeScript", "CSS"],
+      image: "/Assets/taza.png",
+      github: "https://github.com/MasTaZa",
+      demo: null,
     },
     {
       id: 4,
-      title: 'SIGNAL',
-      description: '개인 프로젝트로 진행한 미림인의 친화력을 증진해주는 서비스입니다. 기획과 FE & BE 개발을 담당하였습니다.',
-      tags: ['HTML', 'CSS', 'Flask'],
-      image: '/Assets/pj3.png',
-      github: 'https://github.com/hjzhhhj/SIGNAL',
-      demo: null
+      title: "인사챌린지",
+      description:
+        "미림마이스터고등학교 IT SHOW에 출품한 작품으로, 미림의 전통인 인사를 게임으로 재미있게 배울 수 있도록 만들어주는 서비스입니다. 기획과 FE 개발을 담당하였고, 팀장을 맡아 주도적으로 이끌어나갔습니다.",
+      tags: ["React", "Python", "PostgreSQL", "Redis", "Styled Components"],
+      image: "/Assets/GreetingChallenge.png",
+      github: "https://github.com/MAS-MIRIM/GreetingChallenge_Front",
+      demo: null,
     },
     {
       id: 5,
-      title: 'SCHOK',
-      description: '개인 프로젝트로 진행한 속초 중고등학생에게 정보를 제공해주는 서비스입니다. 기획과 FE 개발을 담당하였습니다.',
-      tags: ['React', 'TypeScript', 'Styled Components', 'Framer Motion'],
-      image: '/Assets/pj4.png',
-      github: 'https://github.com/hjzhhhj/SCHOK',
-      demo: null
+      title: "PortFolio",
+      description:
+        "현재 보고 계시는 개인 프로젝트로 진행한 포트폴리오 사이트입니다.",
+      tags: ["React", "TypeScript", "Styled Components", "Framer Motion"],
+      image: "/Assets/portfolio.png",
+      github: "https://github.com/hjzhhhj/Portfolio_v2",
+      demo: null,
     },
     {
       id: 6,
-      title: '인스타 급식 알리미',
-      description: '개인 프로젝트로 진행한 속초고등학교의 급식을 매일 0시 0분에 각 인스타 스토리에 알려주는 서비스입니다.',
-      tags: ['Python'],
-      image: '/Assets/pj6.png',
-      github: 'https://github.com/hjzhhhj/Sokgo_Today',
-      demo: 'https://www.instagram.com/sokgo_today/'
+      title: "SIGNAL",
+      description:
+        "개인 프로젝트로 진행한 미림인의 친화력을 증진해주는 서비스입니다. 기획과 FE & BE 개발을 담당하였습니다.",
+      tags: ["HTML", "CSS", "Flask"],
+      image: "/Assets/signal.png",
+      github: "https://github.com/hjzhhhj/SIGNAL",
+      demo: null,
     },
     {
       id: 7,
-      title: '인스타 급식 알리미',
-      description: '개인 프로젝트로 진행한 고성중 • 고등학교의 급식을 매일 0시 0분에 각 인스타 스토리에 알려주는 서비스입니다.',
-      tags: ['Python'],
-      image: '/Assets/pj6.png',
-      github: 'https://github.com/hjzhhhj/GMHS_TODAY',
-      demo: 'https://www.instagram.com/gmhs_today/'
-    }
+      title: "SCHOK",
+      description:
+        "개인 프로젝트로 진행한 속초 중고등학생에게 정보를 제공해주는 서비스입니다. 기획과 FE 개발을 담당하였습니다.",
+      tags: ["React", "TypeScript", "Styled Components"],
+      image: "/Assets/schok.png",
+      github: "https://github.com/hjzhhhj/SCHOK",
+      demo: null,
+    },
+    {
+      id: 8,
+      title: "속초고등학교 급식 알리미",
+      description:
+        "개인 프로젝트로 진행한 속초고등학교의 급식을 매일 0시 0분에 각 인스타 스토리에 알려주는 서비스입니다.",
+      tags: ["Python"],
+      image: "/Assets/sokgotoday.png",
+      github: "https://github.com/hjzhhhj/Sokgo_Today",
+      demo: "https://www.instagram.com/sokgo_today/",
+    },
+    {
+      id: 9,
+      title: "POP!CK",
+      description:
+        "전국 고교생 해커톤 U/THON 25에서 진행한 캐릭터 IP를 활용해 성격 테스트를 재미있게 풀어내고, 결과 공유까지 이어지는 서비스입니다. 앱 개발을 담당하였습니다.",
+      tags: ["React Native", "Node.js", "Styled Components"],
+      image: "/Assets/popick.png",
+      github: "https://github.com/MAS-MIRIM/Popick_Frontend",
+      demo: null,
+    },
+    {
+      id: 10,
+      title: "사주보이즈",
+      description:
+        "개인 프로젝트로 진행한 사주명리학을 기반으로 사주를 풀어내는 서비스입니다. 기획과 전체 개발을 담당하였습니다.",
+      tags: ["React", "NestJS", "MongoDB", "Styled Components"],
+      image: "/Assets/sajuboys.png",
+      github: "https://github.com/hjzhhhj/Sajuboys",
+      demo: null,
+    },
+    {
+      id: 11,
+      title: "수화 번역기",
+      description:
+        "개인 프로젝트로 진행한 카메라로 수화를 인식해 번역해주는 서비스입니다. 기획과 전체 개발을 담당하였습니다.",
+      tags: ["Python ", "Mediapipe"],
+      image: "/Assets/translator.png",
+      github: "https://github.com/hjzhhhj/SignLanguageTranslator",
+      demo: "https://drive.google.com/file/d/1Nmr6jmuujo2jJ3sxLACcx3kdQrdu5Lbp/view?usp=drive_link",
+    },
+    {
+      id: 12,
+      title: "Momento",
+      description:
+        "미림마이스터고등학교 주최 해커톤 MITHON에서 진행한 일정·미션·공지·급식을 한곳에서 관리하는 학급 운영 서비스입니다. 기획과 FE 개발을 담당하였고, 팀장을 맡아 주도적으로 이끌어나갔습니다.",
+      tags: ["React", "Styled Components", "NestJS"],
+      image: "/Assets/momento.png",
+      github: "https://github.com/MAS-MIRIM/Momento_Frontend",
+      demo: null,
+    },
+    {
+      id: 13,
+      title: "도파민 브레이커",
+      description:
+        "미림 소프트웨어 챌린지에서 진행한 예선 통과 작품인 부담 없이 실천할 수 있는 짧은 디지털 휴식 루틴 제공 서비스입니다. 기획과 전체 개발을 담당하였습니다.",
+      tags: ["React", "Flask", "MySQL", "Styled Components"],
+      image: "/Assets/dopaminebreaker.png",
+      github: "https://github.com/TeamYeonJin/DopamineBreaker",
+      demo: null,
+    },
   ];
 
   return (
@@ -271,9 +339,7 @@ const Projects = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <SectionTitle>
-            Projects
-          </SectionTitle>
+          <SectionTitle>Projects</SectionTitle>
           <UnderlineDiv></UnderlineDiv>
         </TitleContainer>
 
@@ -281,10 +347,10 @@ const Projects = () => {
           {projects.map((project, index) => (
             <ProjectItem
               key={project.id}
-              $isEven={index % 2 !== 0} 
+              $isEven={index % 2 !== 0}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
+              transition={{ duration: 0.8, delay: index * 0.05 }}
               viewport={{ once: true, amount: 0.3 }}
             >
               <ImageContainer className="project-image-container">
@@ -292,14 +358,10 @@ const Projects = () => {
               </ImageContainer>
               <ProjectContent className="project-content">
                 <ProjectTitle>{project.title}</ProjectTitle>
-                <ProjectDescription>
-                  {project.description}
-                </ProjectDescription>
+                <ProjectDescription>{project.description}</ProjectDescription>
                 <TagList>
                   {project.tags.map((tag, tagIndex) => (
-                    <Tag key={tagIndex}>
-                      {tag}
-                    </Tag>
+                    <Tag key={tagIndex}>{tag}</Tag>
                   ))}
                 </TagList>
                 <ProjectActions>
