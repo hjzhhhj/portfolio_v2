@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const SkillsSection = styled.section`
-  font-family: 'Pretendard', sans-serif;
+  font-family: "Pretendard", sans-serif;
   padding: 5rem 0;
   background-color: #000000;
 `;
@@ -11,7 +11,7 @@ const MaxWidthContainer = styled.div`
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 2rem; 
+  padding: 0 2rem;
 `;
 
 const TitleContainer = styled(motion.div)`
@@ -40,7 +40,7 @@ const UnderlineDiv = styled.div`
 const SkillsGrid = styled.div`
   display: grid;
   gap: 2rem;
-  justify-items: center; 
+  justify-items: center;
 
   @media (min-width: 768px) {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -50,14 +50,14 @@ const SkillsGrid = styled.div`
 
 const SkillCategoryCard = styled(motion.div)`
   width: 100%;
-  max-width: 320px; 
+  max-width: 320px;
   background-color: rgba(18, 18, 18, 0.5);
   backdrop-filter: blur(8px);
   border-radius: 1.5rem;
   padding: 2rem;
   border: 1px solid #4a4a4a;
   transition: all 0.3s ease-in-out;
-  
+
   &:hover {
     border-color: rgba(96, 165, 250, 0.5);
   }
@@ -101,7 +101,7 @@ const SkillItem = styled(motion.div)`
   transition: all 0.3s ease-in-out;
   display: flex;
   flex-direction: column;
-  
+
   &:hover {
     border-color: rgba(96, 165, 250, 0.3);
   }
@@ -124,43 +124,47 @@ const SkillLevelFill = styled(motion.div)<{ $level: number }>`
   height: 100%;
   background: linear-gradient(90deg, #60a5fa 0%, #5563f7 100%);
   border-radius: 0.25rem;
-  width: ${props => props.$level}%;
+  width: ${(props) => props.$level}%;
 `;
 
 const Skills = () => {
   const skills = {
     frontend: {
-      title: 'Frontend',
-      subtitle: '사용자 인터페이스 개발',
+      title: "Frontend",
+      subtitle: "사용자 인터페이스 개발",
       skills: [
-        { name: 'React', level: 70 },
-        { name: 'React Native', level: 25 },
-        { name: 'JavaScript', level: 75 },
-        { name: 'TypeScript', level: 70 },
-        { name: 'HTML/CSS', level: 95 },
-        { name: 'Styled Components', level: 90 }
+        { name: "React", level: 80 },
+        { name: "React Native", level: 25 },
+        { name: "JavaScript", level: 85 },
+        { name: "TypeScript", level: 60 },
+        { name: "HTML/CSS", level: 95 },
+        { name: "Styled Components", level: 90 },
       ],
     },
     backend: {
-      title: 'Backend',
-      subtitle: '서버 및 데이터베이스 개발',
+      title: "Backend",
+      subtitle: "서버 및 데이터베이스 개발",
       skills: [
-        { name: 'Python', level: 50 },
-        { name: 'Java', level: 70 },
-        { name: 'Kotlin', level: 20 },
-        { name: 'C', level: 30 },
-        { name: 'MySQL', level: 25 }
+        { name: "Flask", level: 65 },
+        { name: "Node.js", level: 50 },
+        { name: "Express", level: 45 },
+        { name: "MongoDB", level: 40 },
+        { name: "MySQL", level: 55 },
+        { name: "NestJS", level: 55 },
       ],
     },
     design: {
-      title: 'Tools & Other',
-      subtitle: '툴과 이외의 것들',
+      title: "Tools & Other",
+      subtitle: "툴과 이외의 것들",
       skills: [
-        { name: 'Figma', level: 55 },
-        { name: 'Photoshop', level: 50 },
-        { name: 'Illustrator', level: 35 }
+        { name: "Git", level: 70 },
+        { name: "GitHub", level: 80 },
+        { name: "Figma", level: 75 },
+        { name: "Photoshop", level: 50 },
+        { name: "Illustrator", level: 25 },
+        { name: "Docker", level: 30 },
       ],
-    }
+    },
   };
 
   return (
@@ -172,9 +176,7 @@ const Skills = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <SectionTitle>
-            Skills
-          </SectionTitle>
+          <SectionTitle>Skills</SectionTitle>
           <UnderlineDiv></UnderlineDiv>
         </TitleContainer>
 
@@ -203,10 +205,14 @@ const Skills = () => {
                   >
                     <SkillName>{skill.name}</SkillName>
                     <SkillLevelBar>
-                      <SkillLevelFill $level={skill.level} 
+                      <SkillLevelFill
+                        $level={skill.level}
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.level}%` }}
-                        transition={{ duration: 1.5, delay: skillIndex * 0.1 + 0.5 }}
+                        transition={{
+                          duration: 1.5,
+                          delay: skillIndex * 0.1 + 0.5,
+                        }}
                         viewport={{ once: true }}
                       />
                     </SkillLevelBar>
