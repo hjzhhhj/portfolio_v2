@@ -59,7 +59,7 @@ const TimelineContainer = styled.div`
   }
 `;
 
-const TimelineItem = styled(motion.div)`
+const TimelineItem = styled.div`
   display: flex;
   align-items: flex-start;
   margin-bottom: 4rem;
@@ -149,7 +149,7 @@ const TimelineItem = styled(motion.div)`
 `;
 
 const ActivityContent = styled.div`
-  max-width: 480px;
+  max-width: 420px;
   width: 100%;
   background-color: rgba(18, 18, 18, 0.5);
   backdrop-filter: blur(8px);
@@ -157,7 +157,7 @@ const ActivityContent = styled.div`
   padding: 1.5rem;
   border: 1px solid #4a4a4a;
   flex-grow: 1;
-  min-height: 200px;
+  min-height: 140px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
 
@@ -395,15 +395,16 @@ const Activities = () => {
         </TitleContainer>
 
         <TimelineContainer>
-          {activities.map((activity, index) => (
-            <TimelineItem
-              key={activity.id}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.05 }}
-              viewport={{ once: true, amount: 0.3 }}
-            >
-              <ActivityContent className="activity-content">
+          {activities.map((activity) => (
+            <TimelineItem key={activity.id}>
+              <ActivityContent
+                as={motion.div}
+                className="activity-content"
+                initial={{ opacity: 0, x: activity.id % 2 === 0 ? -60 : 60 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true, amount: 0.3 }}
+              >
                 <ActivityTitle>{activity.title}</ActivityTitle>
                 <ActivityPeriod>{activity.period}</ActivityPeriod>
                 <ActivityDescription>
