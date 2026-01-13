@@ -246,7 +246,7 @@ const Projects = () => {
       tags: ["React", "TypeScript", "Styled Components", "Framer Motion"],
       image: "/Assets/portfolio.png",
       github: "https://github.com/hjzhhhj/Portfolio_v2",
-      demo: null,
+      demo: "https://heejin-portfolio.vercel.app/",
     },
     {
       id: 6,
@@ -296,7 +296,7 @@ const Projects = () => {
       tags: ["React", "NestJS", "MongoDB", "Styled Components"],
       image: "/Assets/sajuboys.png",
       github: "https://github.com/hjzhhhj/Sajuboys",
-      demo: null,
+      demo: "https://sajuboys.vercel.app/",
     },
     {
       id: 11,
